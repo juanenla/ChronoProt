@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ChronoPro - Professional Architecture
 
-## Getting Started
+Aplicación full-stack de cronoterapia para optimización de suplementación en hipertrofia muscular.
 
-First, run the development server:
+## 🏗️ Arquitectura
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Frontend:** Next.js 14 (App Router) + React + Tailwind CSS
+- **Backend:** Next.js API Routes (Serverless Functions)
+- **Database:** Supabase (PostgreSQL)
+- **Engine:** Modelo Multiparamétrico **Secreto** (Solo servidor)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Características
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Formulario Inteligente:** 7 pasos para perfilado profundo.
+- **Motor de Recomendación:**
+  - Matriz de timing por cronotipo (Mañana/Tarde/Noche)
+  - Ajustes por dieta (Omnívoro, Vegano, Keto, etc.)
+  - Ciencia cronobiológica (mTORC1, GH, Cortisol)
+- **Resultados:** 10 secciones de análisis personalizado.
+- **Admin Panel:** Dashboard con métricas y lista de respuestas.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Instalación
 
-## Learn More
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/juanenla/ChronoProt.git
+   cd ChronoProt
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Instalar dependencias:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Configurar variables de entorno:
+   Copiar `.env.local.example` a `.env.local` y rellenar credenciales de Supabase.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Iniciar servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+## 🔒 Modelo Secreto
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+El lógica de negocio sensible reside en `/src/lib/chrono-engine`. Este código:
+1. **NUNCA** se envía al navegador del cliente.
+2. Solo se ejecuta en el servidor via `/api/generate-plan`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📦 Despliegue en Vercel
+
+1. Importar proyecto desde GitHub.
+2. Configurar variables de entorno en Vercel (`SUPABASE_URL`, etc.).
+3. Deploy automático.
+
+---
+
+© 2026 ChronoPro Team
