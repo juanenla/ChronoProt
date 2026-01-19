@@ -36,10 +36,12 @@ export async function GET(request: NextRequest) {
             .from('user_responses')
             .select('chronotype');
 
+        const safeChronotypeData = byChronotype || [];
+
         const chronotypeStats = {
-            morning: byChronotype?.filter(r => r.chronotype === 'morning').length || 0,
-            intermediate: byChronotype?.filter(r => r.chronotype === 'intermediate').length || 0,
-            evening: byChronotype?.filter(r => r.chronotype === 'evening').length || 0
+            morning: safeChronotypeData.filter((r: any) => r.chronotype === 'morning').length,
+            intermediate: safeChronotypeData.filter((r: any) => r.chronotype === 'intermediate').length,
+            evening: safeChronotypeData.filter((r: any) => r.chronotype === 'evening').length
         };
 
         // Distribución por dieta
@@ -48,7 +50,7 @@ export async function GET(request: NextRequest) {
             .select('diet');
 
         const dietStats: Record<string, number> = {};
-        byDiet?.forEach(r => {
+        (byDiet || []).forEach((r: any) => {
             dietStats[r.diet] = (dietStats[r.diet] || 0) + 1;
         });
 

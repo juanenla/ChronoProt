@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
                 ip_hash: ipHash,
                 user_agent: userAgent,
                 plan_generated: body.plan || null
-            });
+            } as any);
 
         if (error) {
             console.error('Supabase error:', error);
