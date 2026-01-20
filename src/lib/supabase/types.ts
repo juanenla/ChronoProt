@@ -42,6 +42,7 @@ export interface Database {
                     equipment: string | null;
                     difficulty: string | null;
                     description: string | null;
+                    image_url: string | null;
                 };
                 Insert: Omit<Database['public']['Tables']['exercises']['Row'], 'id' | 'created_at'>;
                 Update: Partial<Database['public']['Tables']['exercises']['Insert']>;
