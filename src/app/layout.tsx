@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Toaster } from 'sonner';
 
 export const metadata: Metadata = {
   title: "ChronoPro | Cronoterapia para Hipertrofia",
@@ -15,6 +16,7 @@ export default function RootLayout({
     <html lang="es">
       <body className="min-h-screen bg-gray-950 text-white antialiased">
         {children}
+        <Toaster position="top-center" richColors theme="dark" />
       </body>
     </html>
   );
