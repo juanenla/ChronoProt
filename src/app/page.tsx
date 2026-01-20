@@ -59,10 +59,10 @@ export default function Home() {
                     />
 
                     <ActivityCard
-                        title="Tenis / Padel"
+                        title="Court Sports (Tenis · Padel · Pickleball · Squash)"
                         image="/assets/tennis.png"
                         disabled
-                        onClick={() => handleComingSoon('Tenis')}
+                        onClick={() => handleComingSoon('Court Sports')}
                     />
                 </div>
 
