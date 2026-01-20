@@ -33,6 +33,19 @@ export interface Database {
                 Insert: Omit<Database['public']['Tables']['admin_users']['Row'], 'id' | 'created_at'>;
                 Update: Partial<Database['public']['Tables']['admin_users']['Insert']>;
             };
+            exercises: {
+                Row: {
+                    id: string;
+                    created_at: string;
+                    name: string;
+                    muscle_group: string;
+                    equipment: string | null;
+                    difficulty: string | null;
+                    description: string | null;
+                };
+                Insert: Omit<Database['public']['Tables']['exercises']['Row'], 'id' | 'created_at'>;
+                Update: Partial<Database['public']['Tables']['exercises']['Insert']>;
+            };
         };
     };
 }

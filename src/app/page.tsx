@@ -29,7 +29,7 @@ export default function Home() {
                         </span>
                     </h1>
                     <p className="text-xl text-gray-400 font-light leading-relaxed">
-                        Optimiza tu rendimiento sincronizando tu entrenamiento con tu biología.
+                        Optimiza tu rendimiento alineando cada rutina con tu ritmo biológico.
                         <br className="hidden md:block" />
                         Selecciona tu disciplina para comenzar.
                     </p>
@@ -39,7 +39,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
 
                     <ActivityCard
-                        title="Musculación"
+                        title="Gimnasio / Musculación"
                         image="/assets/gym.png"
                         href="/gym"
                     />
